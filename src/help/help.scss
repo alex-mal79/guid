@@ -1,0 +1,10 @@
+// Медиа запрос на ПК версию
+@media(any-hover: hover){
+    &:hover{
+        color: #fff;
+    }
+}
+//Все элементы, кроме последнего
+&:not(:last-child){
+    margin-top: 10px;
+}
