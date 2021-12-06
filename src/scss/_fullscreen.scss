@@ -1,0 +1,90 @@
+.fullscreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    @include adaptive-value('padding-top', 100, 75, 1);
+    @include adaptive-value('padding-bottom', 50, 25, 1);
+    background-image: url(../img/background/full-bg2.png),
+        url(../img/background/full-bg1.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top, left top;
+    background-size: 40%, 60%;
+    background-color: var(--color-prussian);
+    @media (max-width: $md3) {
+        background-image: url(../img/background/full-bg1.png);
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: 100%;
+    }
+    // .fullscreen__title
+    &__title {
+        @include adaptive-value('margin-bottom', 50, 25, 1);
+    }
+    // .fullscreen__container
+    &__container {
+        display: flex;
+        min-height: 100%;
+        @media(max-width: $md3){
+            flex-wrap: wrap;
+        }
+    }
+    // .fullscreen__slider
+    &__slider {
+        flex: 0 1 50%;
+        min-width: 0;
+        @media(max-width: $md2){
+            flex: 0 1 66.667%;
+        }
+        @media(max-width: $md3){
+            flex: 0 1 100%;
+        }
+    }
+    // .fullscreen__swiper
+    &__swiper {
+    }
+    // .fullscreen__controls-wrap
+    &__controls-wrap {
+        flex: 0 1 50%;
+        display: flex;
+        align-items: flex-end;
+        @media(max-width: $md2){
+            flex: 0 1 33.333%;
+        }
+        @media(max-width: $md3){
+            flex: 0 1 100%;
+        }
+    }
+    // .fullscreen__controls
+    &__controls {
+        flex: 0 1 100%;
+        display: flex;
+        align-items: center;
+    }
+    // .fullscreen__controls-fraction
+    &__controls-fraction {
+        flex: 0 1 50%;
+    }
+    // .fullscreen__controls-button
+    &__controls-button {
+        flex: 0 1 50%;
+    }
+    // .fullscreen__controls-prev
+    &__controls-prev {
+        background-color: #062a59;
+    }
+    // .fullscreen__controls-next
+    &__controls-next {
+        background-color: #062a59;
+    }
+}
+.fullscreen-slide {
+    // .fullscreen-slide__title
+    &__title {
+        margin: 0px 25px 0px 0px;
+    }
+    // .fullscreen-slide__body
+    &__body {
+        height: 300px;
+    }
+}
