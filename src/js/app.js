@@ -1,7 +1,8 @@
 "use strict";
-window.addEventListener("load", function() {
+window.addEventListener("DOMContentLoaded", function() {
 // Подключение функций
-@@include('functions/_ibg.js');
+@@include('functions/_header-scroll.js');
 @@include('functions/_burger.js');
+@@include('functions/_drop-menu.js');
 // Подключение плагинов
 });
