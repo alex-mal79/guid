@@ -13,6 +13,39 @@
         color: var(--color-madison);
     }
 }
+
+.title-2 {
+    @include adaptive-value('font-size', 24, 16, 1);
+    @include adaptive-value("margin-bottom", 20, 10, 1);
+    font-weight: 500;
+    line-height: 120%;
+    // .title-2_white
+    &_white {
+        font-weight: 500;
+        color: var(--color-white);
+    }
+    // .title-2_madison
+    &_madison {
+        font-weight: 500;
+        color: var(--color-madison);
+    }
+}
+.title-3 {
+    @include adaptive-value('font-size', 20, 16, 1);
+    @include adaptive-value("margin-bottom", 20, 10, 1);
+    font-weight: 500;
+    line-height: 120%;
+    // .title-3_white
+    &_white {
+        font-weight: 500;
+        color: var(--color-white);
+    }
+    // .title-3_madison
+    &_madison {
+        font-weight: 500;
+        color: var(--color-madison);
+    }
+}
 .controls-swiper {
     // .controls-swiper__fraction
     &__fraction {
@@ -57,4 +90,60 @@
             @include adaptive-value('width', 25, 20, 1);
         }
     }
+}
+.help {
+    // .help__title
+    &__title {
+    }
+    // .help__list
+    &__list {
+    }
+    // .help__item
+    &__item {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        &:not(:last-child){
+            margin: 0px 0px 20px 0px;
+        }
+        @media(max-width: $md3){
+            flex-wrap: wrap;
+        }
+        p {
+            flex: 0 1 50%;
+            font-size: 15px;
+            line-height: 20 / 15 * 100%;
+            color: var(--color-white);
+            margin: 0px 20px 0px 0px;
+            @media(max-width: $md3){
+                flex: 0 1 100%;
+                margin: 0px 0px 0px 0px;
+            }
+        }
+        span{
+            flex: 0 1 50%;
+            font-weight: 500;
+            color: var(--color-prussian);
+            @media(max-width: $md3){
+                flex: 0 1 100%;
+                margin: 10px 0px 0px 0px;
+            }
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -10px;
+            height: 1px;
+            width: 100%;
+            opacity: 0.3;
+            background-color: var(--color-prussian);
+        }
+    }
+    // .help__span
+		&__span {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+		}
 }

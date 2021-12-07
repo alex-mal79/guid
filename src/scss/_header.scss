@@ -6,8 +6,8 @@
     z-index: 50;
     transition: top 0.6s ease 0s;
     background-color: var(--color-bunker);
-    @media(min-width: $md2){
-        &._active{
+    @media (min-width: $md2) {
+        &._active {
             top: -100%;
         }
     }
@@ -35,8 +35,8 @@
         @include adaptive-value('padding-top', 35, 30, 1);
         opacity: 1;
         transition: opacity 0.3s ease 0s;
-        @media(any-hover: hover){
-            &:hover{
+        @media (any-hover: hover) {
+            &:hover {
                 opacity: 0.8;
             }
         }
@@ -194,15 +194,17 @@
     &__item {
         position: relative;
         padding: 10px 15px;
-        &::after {
-            position: absolute;
-            content: '';
-            left: 50%;
-            bottom: 0;
-            height: 1px;
-            width: 90%;
-            transform: translateX(-50%);
-            background-color: var(--color-limed);
+        &:not(:last-child) {
+            &::after {
+                position: absolute;
+                content: '';
+                left: 50%;
+                bottom: 0;
+                height: 1px;
+                width: 90%;
+                transform: translateX(-50%);
+                background-color: var(--color-limed);
+            }
         }
     }
     // .dropdown__link

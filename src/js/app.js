@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", function() {
 @@include('functions/_burger.js');
 @@include('functions/_drop-menu.js');
 // Подключение плагинов
-@@include('app/_swiper.js');
+@@include('app/swiper.js');
 @@include('app/spoilers.js');
 @@include('app/dynamicAdapt.js');
 });
