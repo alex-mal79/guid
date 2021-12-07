@@ -1,0 +1,48 @@
+            <section class="regular-js">
+                <div class="_container">
+                    <h1 class="regular-js__title title title_madison">
+                        Регулярные выражения JavaScript.
+                    </h1>
+                    <div class="regular-js__help help">
+                        <ul class="help__list">
+                            <li class="help__item">
+                                <p>
+                                    - Регулярное выражение для проверки корректности e-mail:
+                                </p>
+                                <span>
+                                    ^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$
+                                </span>
+                            </li>
+                            <li class="help__item">
+                                <p>
+                                    - Регулярное выражение для проверки корректности URL:
+                                </p>
+                                <span>
+                                    ^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$
+                                </span>
+                            </li>
+                            <li class="help__item">
+                                <p>
+                                    - Регулярное выражение для проверки корректности номера телефона
+                                    (пример: «+78(555)555-55-55»):
+                                </p>
+                                <span>
+                                    ^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$
+                                </span>
+                            </li>
+                            <li class="help__item">
+                                <p>
+                                    - Пример использования:
+                                </p>
+                                <span class="help__span">
+                                    <span>function isValidPhone(myPhone) { </span>
+                                    <span style="padding-left: 20px;">
+                                        return /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/.test(myPhone);
+                                    </span>
+                                    <span>}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>

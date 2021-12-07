@@ -209,7 +209,6 @@
     }
     // .dropdown__link
     &__link {
-        white-space: nowrap;
         font-weight: 500;
         font-size: 15px;
         line-height: 20 / 15 * 100%;
@@ -219,6 +218,9 @@
             &:hover {
                 color: var(--color-dodger);
             }
+        }
+        @media(min-width: $md1){
+            white-space: nowrap;
         }
     }
 }

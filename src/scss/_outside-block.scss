@@ -15,11 +15,11 @@
     &__block {
         flex: 0 1 33.333%;
         margin: 0px 50px 0px 0px;
-        padding: 0px 0px 340px 0px;
+        @include adaptive-value("padding-bottom", 340, 70, 1);
     }
     // .outside-block__outside
     &__outside {
         width: calc(100% - 33.333% - 50px);
-        padding: 0px 0px 340px 0px;
+        @include adaptive-value("padding-bottom", 340, 100, 1);
     }
 }

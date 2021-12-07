@@ -1,0 +1,12 @@
+.regular-js {
+    @include adaptive-value('padding-top', 125, 75, 1);
+    @include adaptive-value('padding-bottom', 50, 25, 1);
+    background-color: var(--color-pewter);
+    // .regular-js__title
+    &__title {
+        @include adaptive-value("margin-bottom", 50, 25, 1);
+    }
+    // .regular-js__help
+    &__help {
+    }
+}
