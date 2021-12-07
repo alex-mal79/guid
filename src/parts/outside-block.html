@@ -1,0 +1,39 @@
+            <section class="outside-block">
+                <div class="_container">
+                    <h1 class="spoilers__title title title_madison">
+                        Блок выходящий за пределы контейнера.
+                    </h1>
+                    <div class="outside-block__help help">
+                        <ul class="help__list">
+                            <li class="help__item">
+                                <p>
+                                    - Для блока родителя (блок должен находится вне контейнера):
+                                </p>
+                                <span class="help__span">
+                                    <span>padding-left: max(Npx, calc((100% - Kpx) / 2));</span>
+                                    <span>где Npx - отступ контенйра,</span>
+                                    <span>Kpx - ширина контенйра</span>
+                                </span>
+                            </li>
+                            <li class="help__item">
+                                <p>
+                                    - Для блока, который выступает за пределы контейнера:
+                                </p>
+                                <span class="help__span">
+                                    <span>width: calc(100% - W - P);</span>
+                                    <span>где W - ширина блока в контейнере,</span>
+                                    <span>P - отступ между контейнерами</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="outside-block__body">
+                    <div class="outside-block__block _ibg">
+                        <img src="img/sliders/20.jpg" alt="img">
+                    </div>
+                    <div class="outside-block__outside _ibg">
+                        <img src="img/sliders/9.jpg" alt="img">
+                    </div>
+                </div>
+            </section>

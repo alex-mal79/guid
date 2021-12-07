@@ -1,0 +1,25 @@
+.outside-block {
+    @include adaptive-value('padding-top', 125, 75, 1);
+    @include adaptive-value('padding-bottom', 50, 25, 1);
+    background-color: var(--color-pewter);
+    // .outside-block__help
+    &__help {
+        @include adaptive-value("margin-bottom", 50, 25, 1);
+    }
+    // .outside-block__body
+    &__body {
+        display: flex;
+        padding-left: max(15px, calc((100% - 1200px) / 2));
+    }
+    // .outside-block__block
+    &__block {
+        flex: 0 1 33.333%;
+        margin: 0px 50px 0px 0px;
+        padding: 0px 0px 340px 0px;
+    }
+    // .outside-block__outside
+    &__outside {
+        width: calc(100% - 33.333% - 50px);
+        padding: 0px 0px 340px 0px;
+    }
+}
