@@ -1,13 +1,10 @@
 .spoilers {
     @include adaptive-value('padding-top', 125, 75, 1);
     @include adaptive-value('padding-bottom', 50, 25, 1);
-    background-color: rgb(150, 161, 161);
-    // .spoilers__container
-    &__container {
-    }
+    background-color: var(--color-pewter);
     // .spoilers__title
     &__title {
-        @include adaptive-value('margin-bottom', 30, 20, 1);
+        @include adaptive-value('margin-bottom', 50, 25, 1);
     }
     // .spoilers__help
     &__help {

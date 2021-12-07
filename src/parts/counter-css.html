@@ -1,0 +1,40 @@
+            <section class="counter-block">
+                <div class="_container">
+                    <h1 class="counter-block__title title title_madison">
+                        Счетчик блоков CSS.
+                    </h1>
+                    <div class="counter-block__help help">
+                        <ul class="help__list">
+                            <li class="help__item">
+                                <p>
+                                    - Для родителя элементов указываем css свойство:
+                                </p>
+                                <span>
+                                    counter-reset: Имя счетчика;
+                                </span>
+                            </li>
+                            <li class="help__item">
+                                <p>
+                                    - Для элементов создаем псевдокласс и прописываем css свойства:
+                                </p>
+                                <span class="help__span">
+                                    <span>&::before {</span>
+                                    <span style="padding-left: 20px;">
+                                        counter-increment: Имя счетчика;
+                                    </span>
+                                    <span style="padding-left: 20px;">
+                                        content: "Текст: " "Текст"counter(Имя счетчика);
+                                    </span>
+                                    <span>}</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="counter-block__items">
+                        <div class="counter-block__item"></div>
+                        <div class="counter-block__item"></div>
+                        <div class="counter-block__item"></div>
+                        <div class="counter-block__item"></div>
+                    </div>
+                </div>
+            </section>

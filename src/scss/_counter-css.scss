@@ -1,0 +1,43 @@
+.counter-block {
+    @include adaptive-value('padding-top', 125, 75, 1);
+    @include adaptive-value('padding-bottom', 50, 25, 1);
+    background-color: var(--color-pewter);
+    // .counter-block__title
+    &__title {
+        @include adaptive-value("margin-bottom", 50, 25, 1);
+    }
+
+    // .counter-block__help
+    &__help {
+        @include adaptive-value("margin-bottom", 50, 25, 1);
+    }
+    // .counter-block__items
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        @include adaptive-value("gap", 30, 10, 1);
+        counter-reset: section;
+        @media(max-width: $md3){
+            grid-template-columns: repeat(2, 2fr);
+        }
+        @media(max-width: $md4){
+            grid-template-columns: repeat(1, 4fr);
+        }
+    }
+    // .counter-block__item
+    &__item {
+        height: 100px;
+        @include adaptive-value("height", 100, 50, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+        @include adaptive-font(20, 14);
+        color: var(--color-white);
+        background-color: var(--color-limed);
+        &::before{
+            counter-increment: section;
+            content: "Номер блока: " "0"counter(section);
+        }
+    }
+}
