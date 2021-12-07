@@ -1,8 +1,16 @@
 .title {
     @include adaptive-value('font-size', 48, 28, 1);
+    font-weight: 500;
+    line-height: 120%;
     // .title_white
     &_white {
         color: var(--color-white);
+    }
+    // .title_madison
+    &_madison {
+        font-weight: 600;
+        text-align: center;
+        color: var(--color-madison);
     }
 }
 .controls-swiper {

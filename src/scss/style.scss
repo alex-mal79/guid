@@ -45,11 +45,12 @@ body{
 .main{
     flex: 1 1 auto;
     width: 100%;
-    min-height: 1000px;
 }
 @import '_fullscreen';
 
 @import '_index';
+
+@import '_spoilers';
 
 @import '_footer';
 
