@@ -11,6 +11,7 @@ const path = {
         jsPlugin: project_folder + "/js/",
         json: project_folder + "/json/",
         img: project_folder + "/img/",
+        imgSvg: source_folder + "/img/sprite/",
         fonts: project_folder + "/fonts/"       
     },
     src:{
@@ -21,6 +22,7 @@ const path = {
         jsPlugin: source_folder + "/js-plugins/*.*",
         json: source_folder + "/json/*.*",
         img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)",
+        imgSvg: source_folder + "/img/svg/*.svg",
         fonts: source_folder + "/fonts/*.ttf"
     },
     watch:{
@@ -30,7 +32,8 @@ const path = {
         js: source_folder + "/js/**/*.js",
         jsPlugin: source_folder + "/js-plugins/*.*",
         json: source_folder + "/json/*.*",
-        img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)"
+        img: source_folder + "/img/**/*.+(png|jpg|gif|ico|svg|webp)",
+        imgSvg: source_folder + "/img/svg/*.svg"
     },
     clean: "./" + project_folder + "/"
 }
@@ -46,13 +49,14 @@ const scss = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const group_media = require('gulp-group-css-media-queries');
 const clean_css = require('gulp-clean-css');
-cssbeautify = require('gulp-cssbeautify');
+const cssbeautify = require('gulp-cssbeautify');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const fonter = require('gulp-fonter');
+const svgSprite = require('gulp-svg-sprite');
 
 
 function cssPlugin(){
@@ -141,6 +145,20 @@ function images(){
         .pipe(dest(path.build.img))
         .pipe(browsersync.stream())
 }
+function svgSprites(){
+    return src(path.src.imgSvg)
+        .pipe(
+            svgSprite({
+                mode: {
+                    stack: {
+                        sprite: "../sprite.svg"
+                    }
+                }
+            })
+        )
+        .pipe(dest(path.build.imgSvg))
+        .pipe(browsersync.stream())
+}
 function fonts(){
     src(path.src.fonts)
         .pipe(ttf2woff())
@@ -186,17 +204,19 @@ function watchFiles(params){
     gulp.watch([path.watch.jsPlugin], jsPlugin);
     gulp.watch([path.watch.json], json);
     gulp.watch([path.watch.img], images);
+    gulp.watch([path.watch.imgSvg], svgSprites);
 }
 function clean(){
     return del(path.clean)
 }
 
-const build = gulp.series(clean, gulp.parallel(js, jsPlugin, json, css, cssPlugin, html, images, fonts), fontsStyle);
+const build = gulp.series(clean, gulp.parallel(js, jsPlugin, json, css, cssPlugin, html, images,        svgSprites, fonts), fontsStyle);
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
+exports.svgSprites = svgSprites;
 exports.js = js;
 exports.jsPlugin = jsPlugin;
 exports.json = json;
